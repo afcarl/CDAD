@@ -1,6 +1,8 @@
 
 # various acronym processing tools used in offline and online processes
 
+CONTEXT_W = 15  # number of words on both sides of acronym for context
+
 class Acronym:
 
   # can be given a directory where the corpus documents are stored.  
