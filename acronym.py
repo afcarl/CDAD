@@ -20,7 +20,7 @@ class Acronym:
     pass
 
   # given a valid corpus, return a set of words commonly "near" the acronym 
-  def harvest_context(acronym_str, self):
+  def harvest_context(in_text, acronym_str, self):
     pass
 
   # see below for pseudo code
@@ -29,7 +29,7 @@ class Acronym:
 
   # iterate over the documents in the corpus and calculate the popularity
   # the return value is a float.
-  def calc_acronym_popularity(acronym_str, self):
+  def calc_acronym_popularity(acronym_str, doc_arr, self):
     pass
   
   # iterate over the dict of acronym dicts and merge meanings that are close.
@@ -44,7 +44,7 @@ class Acronym:
     pass
 
   # see below for pseudo code
-  def __scan_docs__(self):
+  def __calc_pop_pack__(self):
     pass
 
   # Runs the complete backend processing, creates a serialized dict which can
@@ -67,7 +67,7 @@ class Acronym:
     # de duplicate acronyms (same as above should be able to use results 
     # without going back to documents.)  
 
-    # serialze data dict with acronym 
+    # serialze data dict with acronyms, in JSON so other apps can load it. 
     pass
   
 if __name__ == "__main__":
