@@ -16,9 +16,11 @@ ROOT_URL = "http://www.simplyhired.com/search?q="
 class DocCrawler():
   def __init__(self, corpus):
     self.corpus = corpus
+    self.max_pages = 1
 
     # this code makes sure we don't overwrite existing files in the corpus
     file_list = sorted(listdir(self.corpus), reverse=True)
+
     if len(file_list) == 0: self.last_file_id = 0
     else:
       self.last_file_id = int(file_list[0].split('.')[0])
@@ -58,6 +60,8 @@ class DocCrawler():
     return job_links[-1]['href']
 
   # open a search page for the search_str on SimplyHired
+  # pages beyond the first have the pn=page_num argument
+  # http://www.simplyhired.com/search?q=Kentico+CMS&pn=2
   def crawl_search_page(self, search_str):
     print "fetching results for %s" % search_str
     c = urlopen("%s%s" % (ROOT_URL, search_str))
@@ -74,6 +78,9 @@ class DocCrawler():
   
 if __name__ == "__main__":
   crawler = DocCrawler("docs")
-  crawler.crawl_search_page("EMR")
+
+  #seed_acronyms = ["EMR", "POS", "CMS", "CRM"]
+  crawler.crawl_search_page("CMS")
+  #map(crawler.crawl_search_page, seed_acronyms)
 
   print "finished crawling"
