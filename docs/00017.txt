@@ -1,0 +1,42 @@
+Job Description
+
+Where Technology and Teamwork come together.... The qualified applicants will become part of Northrop Grumman's Postal Services and Solutions group. This is a contract to provide USPS Information Technology with professional, technical and support services to support the application development, database production support, help desk administration, LAN administration and various requirements for distributed technical support throughout the USPS enterprise.
+
+Roles and Responsibilities:
+
+The successful candidate will manage, monitor, and conduct performance tuning of approximately 65 Windows 2008 R2 servers and 8 POS 2009 Ready Point of Sale terminals with peripherals such as bar code scanner, scale, credit card reader, receipt and label printers, etc.  Their duties will include troubleshooting event log errors, network errors and bottlenecks, and any hardware problems. They will be working with several Microsoft designed applications used for managing xml message traffic between the 65 servers referenced above, and approximately 45,000 POS terminals deployed throughout the country.
+
+Qualifications
+
+Basic Qualifications:
+
+The candidate must possess the following technical experience:
+
+* Four year (Bachelor degree) or a minimum of 10 years of related work experience.
+* 3-5 years of recent experience with:
+* Installing Windows Server 2008 over a network
+* Configuring performance monitoring and optimization Server 2008
+* Securing files and resources server 2008
+* Configuring protocols and network connections
+* Deploying service packs
+* Managing group permissions
+
+* Competent in all current Microsoft OS levels.
+* 3-5 years experience working with Point of Sale (POS) Devices such as bar code scanner, scale, credit card reader, receipt and label printers, etc.
+* Experience with management of large and complex Active Directory domains, including both server and workstation placement.
+* Experience with large-scale deployment tools at both server and workstation levels.
+* Experience with managing patching operations for all Microsoft OS, and common products in that arena.
+* Virtual Machine system administration experience useful.
+* Strong organization and interpersonal skills. Ability to deal with and balance multiple priorities. Ability to deal with ambiguity and rapid change. Demonstrated interaction skills across a wide spectrum of technical contacts and teams.
+*
+Must be able to obtain a Postal Sensitive Clearance (US Citizenship or Green Card status required)
+
+* Must also have excellent written and oral communication skills.
+
+Preferred Qualifications:   MCSE certified
+
+Northrop Grumman Corporation is a leading global security company providing innovative systems, products, and solutions in unmanned systems, cybersecurity, C4ISR, and logistics and modernization to government and commercial customers worldwide.
+
+Northrop Grumman is committed to hiring and retaining a diverse workforce. We are proud to be an Equal Opportunity/Affirmative Action-Employer, making decisions without regard to race, color, religion, creed, sex, sexual orientation, gender identity, marital status, national origin, age, veteran status, disability, or any other protected class. For our complete EEO/AA statement, please visit www.northropgrumman.com/EEO. U.S. Citizenship is required for most positions.
+
+Information Systems

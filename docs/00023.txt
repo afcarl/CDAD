@@ -1,0 +1,67 @@
+Designs, develops, and deploys/executes technology solutions intended to modify/cleanse CRM operational data within core CRM business applications.
+
+SUMMARY OF KEY RESPONSIBILITES:
+
+The data administrator will provide analysis and recommendations to optimize CRM operational data, assist in developing standard operating procedures for data maintenance, identify gaps/issues in operational data and recommend opportunities for data cleansing, and evaluate CRM systems for opportunities to improve data quality. The data administrator will collaborate on these activities with the Data Manager.
+
+The CRM Data Administrator will participate in technical design discussions with IT&S and vendor application, data, and integration architects. The CRM Data Administrator will evaluate technical design approaches and make recommendations for improvement and/or approval to the Director of CRM Technology Solutions.
+
+DUTIES AND RESPONSIBILITIES:
+
+o   Provide input to the various CRM teams during key software lifecycle phases
+
+o   Collaborate with IT&S and vendor resources, as directed by the Director of CRM Technology Solutions, to provide input on technical designs, specifically in the areas of data architecture and the various service layers, as they pertain to the CRM application roadmap
+
+o   Work directly with Data Manager to identify gaps in production data and formulating steps that will result in improved data quality; Serve as first-level support for CRM operational data reporting requests
+
+o   Design, develop, execute, and QA data-cleansing scripts within production CRM systems for management reporting, assist in developing CRM data models, identify proactive mechanisms to “detect” errors in production data, build import/extract routines to enhance production support processes, and build user-friendly MS Office based tools for end-user data maintenance, where necessary
+
+o   Participate and provide input to master data management governance and design concepts
+
+o   Extract, evaluate, and analyze data from multiple databases to design and create relational reporting, or transactional data stores; Maintain data integrity and work to eliminate redundancy
+
+o   Coordinate data models, dictionaries, and other database documentation across multiple applications
+
+o   Work with data transformation teams to ensure that the model design and development is properly communicated
+
+o   Design data access, usage and change rules for users within the CRM organization; actively manage users using CRM applications in production
+
+o   Advise on the advanced functions and operational techniques of data administration tools and systems
+
+o   Own all data conversion project tasks associated with the integration of CRM data into 3rd party applications or data stores
+
+KNOWLEDGE, SKILLS AND ABILITIES:
+
+Knowledge:
+
+·         Demonstrates knowledge and understanding of organizational and departmental policies, procedures and system
+
+·         Release management and version control
+
+·         Enterprise application maintenance best practices
+
+Skills:
+
+·         Communicates clearly and concisely both verbally and in writing
+
+·         VB, .NET, Java, data conversion, stored procedures, advanced SQL, SOA, REST web services, SOAP, ODBC, BI reporting tool experience, HTML, XML
+
+Abilities:
+
+·         Demonstrates good judgment in handling situations not covered by written or verbal instructions
+
+·         Able to work effectively with internal and external customers
+
+·         Self-starting, independent worker
+
+·         Demonstrates high level of autonomy
+
+·         Able to handle multiple priorities and manage stress appropriately
+
+Required Experience:
+
+Production enterprise system maintenance and/or data conversion and support process design. Data modeling, report design, software design, development of code, QA experience.
+
+Preferred Experience:
+
+Experience with Salesforce.com, Working knowledge of the healthcare industry, Experience working with PHI and PII

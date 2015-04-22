@@ -1,0 +1,67 @@
+Title:
+ 
+
+Dynamic CRM Technical Analyst Location:
+ Des Moines, 
+
+IA Type:
+ Contract  
+
+Job Description:
+ Apply today to work on a long-term contract at a prominent financial enterprise!   Our client is in need for a Dynamic CRM Technical Analyst to be paired up with a lead technical analyst supporting a NEW Microsoft Dynamic CRM 2011 tenant being setup for an existing business unit. 
+
+Experience Required:
+ 
+• 1+ years of Microsoft Dynamic CRM 2011 experience 
+• 8+ years of technical analysis and design experience w/ web based applications or equivalent technical experience. 
+
+Helpful Experience:
+ 
+• MS CRM 4.0 but not suffice for MS CRM 2011 experience 
+• MS Certification experience in Dynamic CRM 2011 
+• Helpful classes:     
+- 
+
+MB2-868:
+ MS Dynamic CRM 2011 Applications     
+- 
+
+MB2-866:
+ MS Dynamic CRM 2011 Customization and 
+
+Configuration Job Responsibilities:
+ 
+• Interact with both the business and technology sides. 
+• Know what features/functions are provided out of the box from Dynamics 2011 (vs) what things require customization/configuration changes to support. 
+• Create data mapping for migration of existing CRM data (legacy tool) to Dynamic CRM to support project migration requirements. 
+• Work with lead technical analyst to translate requirements into design criteria for the CRM tool. 
+• Work with the middleware group to setup web services between the CRM application and internal systems. 
+• Understand web services, XML Data Mapping, and how to create activity/system diagrams to illustrate flow as part of the detailed design documents that will be created. 
+• Produce a technical design timelines (indicating duration to complete their analysis and associated JAD sessions), Functional System Design document (outlining the totality of the changes needed to the CRM tool), Data mapping document (outlining the migration of data from the existing CRM tool to the Dynamic CRM tool), and the technical testing scripts (in Quality Center 11) along with their executions. 
+• Extremely clear communication skills – will be interacting with business partners as requirements are clarified/created and JAD sessions are held to refine outstanding questions on approach. 
+• Know how to test the chances that will be implemented 
+- able to articulate to our test team on best approach validation from scenario perspectives. 
+• Self-motivated / driven professional! 
+• Transportation – must be onsite as part of existing team. Preferred skills: 
+• Quality center (ver9+) 
+- testing validating the end state solution. 
+• Mortgage experience 
+- to understand terms discussed as part of the business requirements. 
+• Background in data migration 
+- helpful experience with web based applications or equivalent technical experience. Tools utilized in this position: 
+• MS Dynamics CRM 2011, 2013 and 2015 
+• HP Application Lifecycle Management (ALM) ver 11.0+ 
+• XML Spy 9 
+- or equivalent 
+• Rational ClearQuest (for defect management and resolution) 
+• Excel 2010 ( for data mapping artifacts) 
+• Visio 2010 (for process flows) 
+• Word 2010 (for design doc creation) 
+• Snag It (for screen capture and UI manipulation) 
+• Live Meeting (for hosting JAD sessions)   
+*
+*
+*Will consider H1B transfer candidates
+*
+*
+*

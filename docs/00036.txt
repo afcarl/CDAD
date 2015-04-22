@@ -1,0 +1,35 @@
+Company Description:
+ Liberty Personnel is widely recognized as the finest direct placement and contract recruiting firm in the region. For the last decade, Liberty Personnel's track record of delivering highly skilled personnel to employers is unparalleled. Our proprietary system of screening applicants and streamlining the hiring process has proven beneficial for both employers and job applicants. Our website, which was visited by 600,000 people last year, has developed into an essential destination site for job seekers. That means our website has over 50,000 potential applicants exploring new opportunities each month. Please visit our website or contact us to examine potential possibilities or services we could provide for you. Give us the chance to show you why so many people have been seeking our services. 
+
+Job Description:
+ 
+
+Position Title:
+ Web Developer OverviewPrimary responsibilities will be to provide development support for internet and intranet application systems. Individual will be responsible for maintaining and enhancing custom C# programming that augments our CMS system as well as testing, debugging and troubleshooting application issues on a daily basis. The successful candidate will have the ability to write well documented programs in C#, ASP.NET, Good knowledge of Microsoft SQL Server, experience with Concurrent Versioning Systems (CVS) as well as an excellent knowledge of Javascript/jQuery, CSS and HTML layouts. The successful candidate will also be able to communicate clearly and concisely with the team as well as with a non-technical audience.Responsibilities include:
+• Analysis 
+- Communicate and interface with team and internal customers to determine and design programmatic solutions for business needs. Monitor and report project development status. Help identify feasible technical alternatives for business solutions. Ensure projects are tested thoroughly from development to deployment in the production environment.
+• Development of robust and user-friendly .NET-based web applications. 
+• Designing, developing, testing, and implementing core and custom applications/designs in and out of the CMS environment. KenticoCMS platform knowledge a plus.
+• Working with other developers, consultants, and key users to ensure designs/applications meet development requirements. 
+• Participating in analysis and requirements gathering, design and coding meetings, project planning sessions, code and test plan reviews to ensure quality of requested deliverables. Development of quality written technical design specifications and documentation 
+• Effective training and support of business community where required. 
+• Troubleshoot issues and system bugs and provide direction for work-around, corrections and enhancements. 
+• Ensure availability and performance of web and other applications.
+
+Requirements:
+
+• BS/BA in Computer Science or related area.
+• Must have 2-4 years of professional experience in C#, ASP.Net programming, including testing experience, design, configuration, and user support. Should have proven .NET experience as well as a solid understanding of Object Oriented Design and Programming.
+• Experience with Javascript/jQuery, CSS, and HTML layouts. And the ability to write functional cross browser code.
+• Understanding the benefits of SEO and the development skills to support SEO is highly desirable.
+• Good working knowledge of Microsoft SQL server DB, and SQL queries.
+• Experience in KenticoCMS, including template creation, E-commerce customizations, as well as Maintenance and configuration knowledge a plus.
+• Experience in developer unit testing including debugging.
+• Excellent skills in oral and written communication and presentations
+• Experience working with business managers in order to evaluate current and planned business processes and initiatives.
+• Work well on a team as well as being able to take a leadership role in domestic and international projects.
+• Multi-Language skills are a plus.
+• Ability to grow professionally in a highly flexible and fast-moving environment. Kevin McCarthyLiberty Personnel Services, Inc. 410 Feheley Drive | King of Prussia, PA 19406 
+
+Direct Line:
+ 484.238.1949 kevin@libertyjobs.com www.libertyjobs.com http://www.linkedin.com...

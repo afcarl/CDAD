@@ -1,9 +1,61 @@
-The team member's number one job responsibility is to deliver the most remarkable patient experience, in every dimension, every time, and understand how he or she contributes to the health system’s vision of achieving that commitment to patients and families.
+~~Zonar Systems is a ~$100M leader in the big-data, commercial connected-vehicle space and has grown 30%+ annually for the last three years. As the first company to develop a technical solution for federally-mandated Electronic Vehicle Inspection Reports (EVIR), we are uniquely positioned in the marketplace to provide real-time big data analytics products and industry specific solutions to commercial trucking companies around the world. Zonar is a privately funded, no-debt company looking to rapidly scale to $500M+. Leveraging a portfolio of approximately 150 patents, we are building upon these data and related analytics services to create the next generation of software and services for the 15M commercial target customers in the US alone.
 
-Health information management is responsible for developing, implementing, maintaining, and monitoring information management standards and systems to support the patient record. The EMR Specialist Lead is responsible for assisting management with coordinating workflows related to all on-site HIM workflows within acute care HIM departments. This includes the pulling/retrieving/sorting, document assessment, prepping, scanning/indexing, and quality analysis of paper medical record documents into any record scanning application/electronic medical record system. The EMR Specialist Lead will also assist management with the coordination of on-site release of information tasks/workflows for walk-in medical record requests. The EMR Specialist Lead will also act as a resource for all EMR Specialists, and will assist with any training/on-boarding efforts. All on-site HIM staff provides customer service to callers/visitors to the HIM departments as appropriate. This colleague will also foster working relationships with other departments to ensure timely resolution related to any issues within these workflows.
- 
-* Education: High school diploma required. Associates degree preferred.
-* Experience: Three years of experience in hospital medical records department. required.
-* Licensure/certification/registration: RHIT preferred.
-* Additional skills required: Must possess excellent analytical skills and customer service skills. Ability to successfully complete generic and department-specific skills validation and competency testing. Must have the ability to multitask and work independently with limited supervision. Must be able to meet standardized productivity metrics/goals. Should have a strong working knowledge of HIPAA requirements. Must be comfortable in a computer based workflow. Must have a working knowledge and/or familiarity with acute care medical records and hospital regulatory environment. Ability to drive/travel to multiple locations/facilities as needed.
-* Additional skills preferred: Experience with the EPIC EHR and/or Hyland On Base scanning application.
+ 
+
+Zonar has a proven history of continuous innovation on behalf of our commercial customers, providing products that efficiently and easily track commercial fleets and assets, streamline reporting and significantly increase safety while saving cost. We have grown to 2500 customers and maintain a 99+% customer renewal rate with a 325K unit install base. 60% of our revenue is tied to connected vehicle services; our customer base represents a broad range from internal fleets with Boeing and Mondelez, to an OEM partnership with Daimler, which manufactures 50% of the commercial trucks sold worldwide.
+
+ 
+
+Zonar Systems’ culture is based on ingenuity, leadership, teamwork, excellence, passion, integrity, and fun. Our company has grown to over 250 employees who are goal-oriented and fast-paced, but understand the importance of having a healthy work life balance. This is an excellent opportunity to work for a fast-paced, growing, innovative company, make a big impact on a rapidly evolving space, and have fun along the way.
+
+ 
+
+ 
+
+ROLE OVERVIEW
+
+As a Help Desk Tier I Representative this role will report directly to the Help Desk Supervisor and provide support and troubleshooting of Zonar Systems products and solutions.  This role requires up to date knowledge of Zonar solutions to ensure accurate and quality support via phone and email to Zonar Systems customers as well as internal employees.
+
+ 
+
+Key metrics for Year 1 success in this role:
+•Successfully comprehend all technical aspects of Zonar’s proprietary hardware and software products.
+•Ability to assist customers remotely by effectively troubleshooting and diagnosing possible issues with Zonar products.
+•Ability to seamlessly manage queue of incoming calls and emails to assure accurate, prompt and clear response’s to our customers.
+
+ 
+
+ 
+
+ROLE RESPONSIBILITIES
+
+This role requires an out of the box thinker with multi-tasking abilities who is confident in processing customer technical requests.  This person should be a subject matter expert of Zonar hardware and software while working in a fast paced call center environment.
+
+ 
+
+Key functions this role will oversee include:
+•Respond to internal & external phone call and email requests for Zonar technical support
+•Document, track and monitor problems to ensure timely resolution of customer issues
+•Escalate problems as necessary
+•Validate and process qualified hardware returns
+•Cross collaborate with internal departments
+•Provide support to internal employees
+•Provide remote training to customers
+•Perform administrative duties as needed
+•Work on projects assigned by Help Desk Management
+
+ 
+
+QUALIFICATIONS
+•Creativity, initiative, accountability, leadership
+•Good written and verbal communication skills
+•Good people and presentation skills
+•Ability to set goals and achieve scheduled deadlines
+•Exceptional troubleshooting skills
+•Strong computer skills
+•Outstanding customer service skills
+•Knowledge of internet based systems
+•Proficient in Microsoft Office, Excel, Word & Outlook
+•Experience with Telematics and GPS usage a plus
+•Associates degree in technical field or Bachelor’s Degree or equivalent work/military experience required.
+•Prior customer service, help desk, technical support or training experience preferred
