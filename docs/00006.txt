@@ -1,0 +1,91 @@
+The AVP for EMR Implementation is responsible for organizing and executing the successful implementation of all components of the EMR in physician practices.  This includes the creation and maintenance of an underlying infrastructure and deployment team that is clinically and business focused.  This role also includes the documentation and validation of the implementation strategy, the identification of associated risks and mitigation actions, the composition and responsibility of the multidisciplinary team for implementation, and the completion and execution of the implementation business case budget and assumptions.
+
+Implementation activity includes process workflow analysis and redesign, change management and application installation for all functionality associated with the core EMR application and associated downstream and bolt-ons systems across the enterprise as needed.
+
+The AVP for EMR Implementation is responsible for developing productive relationships with all internal and external Clinical and Business stakeholders.  This position also provides input to future direction of the physician practice technology solutions and products that span the care continuum.  For additional solutions, this position provides implementation services to support enterprise deployment.
+
+*
+Provide day-to-day overall implementation leadership, management and direction for the EMR implementation.
+
+*
+Lead EMR implementation efforts across related HCA departments, facilities, and business partners; work in partnership with the CMIO of HCAPS.
+
+*
+Develop, collaboratively, the responsibilities for all implementation roles (includes at a minimum CSG, Parallon, IT&S Corporate, IT Field Operations, Physician Practice Based Team).
+
+*
+Create and maintain implementation toolkits, where needed, for deployment across the enterprise.
+
+*
+Prepare and manage the implementation budget associated with installing the application and modifying clinical and business processes.
+
+*
+Coordinate the creation of training and education for all implementation resources and ensure that end user education materials are created and maintained.
+
+*
+Create, maintain and monitor the master implementation schedule across multiple teams, plans, and dependencies.
+
+*
+Develop the master implementation work plan and coordinate its customization for all field based work.
+
+*
+Develop the site-preparation guide and cutover guide to support implementation in addition to toolkit creation.
+
+*
+Adjust and communicate overall implementation plans and took kits in response to changing business requirements.
+
+*
+Actively communicate with division, corporate and facility stakeholders to manage the impact of change and communicate project status expectations and timelines.
+
+*
+Prepare project status reports utilizing standard tools meeting the guidelines established by leadership.
+
+*
+Guide and direct project directors and other members of the implementation team to achieve implementation schedules.
+
+*
+Proactively identify and resolve program level issues; manage the change control process.
+
+*
+Provide quality assurance of overall implementation plans and tools along with the execution of those plans.
+
+*
+Ensures processes adhere to clinical standards of physician practices across the HCA enterprise.
+
+*
+Practices and adheres to the "Code of Conduct" philosophy and "Mission and Value Statement".
+
+*
+Other duties as assigned as necessary, to support the EHR Program Office.
+
+Qualifications
+
+EDUCATION:
+Bachelor's Degree in Business Administration or Clinical Practice (Master's Degree preferred)
+
+EXPERIENCE:
+
+*
+Minimum of 10 years Management experience required.
+
+*
+Experience within healthcare required.
+
+*
+Experience required in EMR System implementation.
+
+*
+8+ years of experience leading large-scale, full life-cycle Clinical EMR application projects with a proven track record of execution and results preferred.
+
+*
+Demonstrated deep process knowledge and solid technical understanding of the various systems interfacing to create the EHR.
+
+*
+Solid communication and change management skills to influence and lead other HCA departments, business partners, and facility leadership through this process.
+
+*
+Demonstrated results-oriented with a demonstrated strong commitment and willingness to do what it takes to get the job done.
+
+PHYSICAL DEMANDS/WORKING CONDITIONS:
+
+Work is performed in an office environment.  Work may be stressful at times. Contact may involve dealing with angry or upset people.  Up to 50% travel during periods of field implementation.
