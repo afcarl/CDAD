@@ -14,11 +14,13 @@ class Acronym:
   # Find all the acronyms in a given string of text.
   # Retruns a list of the acronyms.
   def extract_acronyms(in_text, self):
+    # regular expressions should match: CMS or C.M.S.
     pass
 
   # Finds any in-line definitions of acronyms.  An example of this is: AI 
   # (Artificial Intelligence).  Returns a list of acronym, defintion pairs. 
   def extract_acronym_defs(in_text, self):
+    # regular expressions should match: CMS (Content Management System) 
     pass
 
   # given a valid corpus, return a set of words commonly "near" the acronym 
