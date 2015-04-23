@@ -1,5 +1,6 @@
 
 # various acronym processing tools used in offline and online processes
+import re
 
 CONTEXT_W = 15  # number of words on both sides of acronym for context
 
@@ -15,7 +16,7 @@ class Acronym:
   # Retruns a list of the acronyms.
   def extract_acronyms(in_text, self):
     # regular expressions should match: CMS or C.M.S.
-    pass
+    return re.findall(r'(?:[A-Z]\.){2,}|[A-Z]{2,}', in_text)
 
   # Finds any in-line definitions of acronyms.  An example of this is: AI 
   # (Artificial Intelligence).  Returns a list of acronym, defintion pairs. 
