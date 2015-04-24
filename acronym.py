@@ -4,6 +4,7 @@ import codecs
 import re
 from os import listdir
 import json
+import Levenshtein
 
 CONTEXT_W = 15  # number of words on both sides of acronym for context
 ACRONYM_REGEX = re.compile(r'((?:[A-Z]\.){2,}|[A-Z]{2,})\s+\([A-Za-z ]+\)')
@@ -112,7 +113,7 @@ class Acronym:
       print "this can be set in the object constructor like: o = Acronym('dir')"
       raise Exception("corpus folder not set")
 
-    r = []
+    r = []; full_text = []
 
     files = listdir(self.corpus)
     for fn in files:  # TODO Cleanup this into map()
@@ -123,18 +124,48 @@ class Acronym:
       acs =  self.extract_acronyms(text)
       defs =  self.extract_acronym_defs(text)
       fr.close()
+      full_text.append(text)
       r.append( (acs,defs) )
 
-    return r
+    return r, full_text
+
+  def __num__occurances__(self, meaning, doc_a):
+    total = 0
+    for doc in doc_a:
+      if doc.find(meaning) > -1: total += 1
+
+    return total
 
   # iterate over the documents in the corpus and calculate the popularity
   # the return value is a float.
-  def calc_acronym_popularity(self, acronym_str, doc_arr):
-    pass
+  def calc_acronym_popularity(self, doc_a, d):
+    for key in d.keys():
+      print key
+      if len(d[key]) == 1: 
+	d[key][0]["popularity"] = 1.0
+      else:  # more than one meaning, need to do calculations
+	temp_d = {}
+	print "more than one meaning"
+	total_occurances = 0
+	for item in d[key]:
+	  meaning = item["def"]
+	  temp_d[meaning] = self.__num__occurances__(meaning, doc_a)
+	  total_occurances += temp_d[meaning]
+
+	total_occurances = float(total_occurances)
+	for item in d[key]:
+	  item["popularity"] = temp_d[item["def"]]/total_occurances
+	  
   
   # iterate over the dict of acronym dicts and merge meanings that are close.
   # There is nothing returned as you can modify dicts in place in Python.  
+  # This uses the Levenshtein edit distance for sting comparision.
   def deduplicate(self, in_dict):
+    for key in in_dict.keys():
+      defs = in_dict[key]
+      if len(defs) < 2: continue
+      ratio = Levenshtein.ratio('hello world', 'hello')
+
     return in_dict
 
   # Given an acronym_str and a context decided the best possible meaning. 
@@ -151,14 +182,11 @@ class Acronym:
       for defi_pair in doc[1]:
         acronym, defi = defi_pair
 	if acronym in ret_d:
-	  print "the acronym: %s is in the dict" % acronym
-	  print ret_d[acronym]
 	  if not defi in ret_d[acronym]:
-	    ret_d[acronym].append(defi)
+	    ret_d[acronym].append({"def": defi, "popularity": 0.0})
 	  # get all defintions for this acronym and see if 
 	else:
-	  print "updating the dict with: ",defi
-	  ret_d[acronym] = [defi]
+	  ret_d[acronym] = [{"def": defi, "popularity": 0.0}]
 
     return ret_d
 
@@ -171,7 +199,7 @@ class Acronym:
     # extract acronyms from every document
     # extract acronym meanings from every document
     # extract acronym context from every document 
-    extracted_info = self.__scan_docs__() 
+    extracted_info, doc_texts = self.__scan_docs__() 
 
     # pseudo code for __calc_pop_pack__
     # calucate acronym popularity (should be able to do this over the above
@@ -181,6 +209,8 @@ class Acronym:
     # acronym and the value is a list of dicts, containing: popularity score,
     # and meaning candidates.  
     prepared_dict = self.__calc_pop_pack__(extracted_info)
+
+    self.calc_acronym_popularity(doc_texts, prepared_dict)
 
     # de duplicate acronyms (same as above should be able to use results 
     # without going back to documents.)  
