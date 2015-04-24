@@ -3,6 +3,7 @@
 import codecs
 import re
 from os import listdir
+import json
 
 CONTEXT_W = 15  # number of words on both sides of acronym for context
 ACRONYM_REGEX = re.compile(r'((?:[A-Z]\.){2,}|[A-Z]{2,})\s+\([A-Za-z ]+\)')
@@ -92,7 +93,17 @@ class Acronym:
 
   # given a valid corpus, return a set of words commonly "near" the acronym 
   def harvest_context(self, in_text, acronym_str):
-    pass
+    ret_set = set()
+    word_tokens = re.findall(u"\w+", in_text)
+
+    # iterate over every occurance of acronym_str
+    for ind in [i for i,x in enumerate(word_tokens) if x == ac]:
+      lowerbound = max(0, ind - CONTEXT_W)
+      upperbound = min(len(word_tokens) -1, ind + CONTEXT_W + 1)
+      for word in word_tokens[lowerbound:upperbound]:
+        ret_set.add(word)
+
+    return ret_set
 
   # see below for pseudo code
   def __scan_docs__(self):
@@ -101,13 +112,20 @@ class Acronym:
       print "this can be set in the object constructor like: o = Acronym('dir')"
       raise Exception("corpus folder not set")
 
+    r = []
+
     files = listdir(self.corpus)
-    for fn in files:
+    for fn in files:  # TODO Cleanup this into map()
       fr = codecs.open("%s/%s" % (self.corpus, fn), 'r', 'utf-8')
       text = fr.read()
-      #print self.extract_acronyms(text)
-      print self.extract_acronym_defs(text)
+
+      # TODO cleanup, may be able to combine these two together
+      acs =  self.extract_acronyms(text)
+      defs =  self.extract_acronym_defs(text)
       fr.close()
+      r.append( (acs,defs) )
+
+    return r
 
   # iterate over the documents in the corpus and calculate the popularity
   # the return value is a float.
@@ -117,7 +135,7 @@ class Acronym:
   # iterate over the dict of acronym dicts and merge meanings that are close.
   # There is nothing returned as you can modify dicts in place in Python.  
   def deduplicate(self, in_dict):
-    pass
+    return in_dict
 
   # Given an acronym_str and a context decided the best possible meaning. 
   # Return a list of dicts with scores, the list should be sorted from 
@@ -126,8 +144,23 @@ class Acronym:
     pass
 
   # see below for pseudo code
-  def __calc_pop_pack__(self):
-    pass
+  def __calc_pop_pack__(self, info_l):
+    ret_d = {}
+    # iterate over definitions and pack them into dict
+    for doc in info_l:
+      for defi_pair in doc[1]:
+        acronym, defi = defi_pair
+	if acronym in ret_d:
+	  print "the acronym: %s is in the dict" % acronym
+	  print ret_d[acronym]
+	  if not defi in ret_d[acronym]:
+	    ret_d[acronym].append(defi)
+	  # get all defintions for this acronym and see if 
+	else:
+	  print "updating the dict with: ",defi
+	  ret_d[acronym] = [defi]
+
+    return ret_d
 
   # Runs the complete backend processing, creates a serialized dict which can
   # be loaded by the online component.  
@@ -138,6 +171,7 @@ class Acronym:
     # extract acronyms from every document
     # extract acronym meanings from every document
     # extract acronym context from every document 
+    extracted_info = self.__scan_docs__() 
 
     # pseudo code for __calc_pop_pack__
     # calucate acronym popularity (should be able to do this over the above
@@ -146,12 +180,18 @@ class Acronym:
     # As each result is calculated pack into a dict, where the key is the 
     # acronym and the value is a list of dicts, containing: popularity score,
     # and meaning candidates.  
+    prepared_dict = self.__calc_pop_pack__(extracted_info)
 
     # de duplicate acronyms (same as above should be able to use results 
     # without going back to documents.)  
+    final_dict = self.deduplicate(prepared_dict)
 
     # serialze data dict with acronyms, in JSON so other apps can load it. 
-    pass
+    fw = open("final.json", "w")
+    fw.write(json.dumps(final_dict))
+    fw.close()
+
+    json.dumps(prepared_dict)
 
   def test_acronym_extraction(self):
 
