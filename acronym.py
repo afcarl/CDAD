@@ -1,9 +1,15 @@
 
 # various acronym processing tools used in offline and online processes
+import codecs
 import re
+from os import listdir
 
 CONTEXT_W = 15  # number of words on both sides of acronym for context
 ACRONYM_REGEX = re.compile(r'((?:[A-Z]\.){2,}|[A-Z]{2,})\s+\([A-Za-z ]+\)')
+CAPS2p = r'(?:[A-Z]\.){2,}|[A-Z]{2,}'  # regex pattern to find all caps words
+                                         # greater than 2 characters in length
+
+AC_MAX_LEN = 5  # heursitc to filter out capatilized words 
 
 class Acronym:
 
@@ -20,13 +26,32 @@ class Acronym:
   # Retruns a list of the acronyms.
   def extract_acronyms(self, in_text):
     # regular expressions should match: CMS or C.M.S.
-    matches = re.findall(r'(?:[A-Z]\.){2,}|[A-Z]{2,}', in_text)
+    matches = re.findall(CAPS2p, in_text)
     return map(self.__remove_periods__, matches)
 
+  # helper to see if the characters of an acronym match the first letters
+  # in the previous N tokens, where N is the length of the acronym
+  def __words_match_acronym__(self, ac_str, tokens):
+    matches = True
+    #print "comparing: ",ac_str," and ",tokens
+    for i in range(len(ac_str)):
+      if not ac_str[i] == tokens[i][0].upper():
+        matches = False
+	break
+
+    return matches
+    
   # Finds any in-line definitions of acronyms.  An example of this is: AI 
   # (Artificial Intelligence).  Returns a list of acronym, defintion pairs. 
+  # Usually the defintion comes first then the acronym like: 
+  # registered nurses (RN)
+  # HP Application Lifecycle Management (ALM) ver 11.0+
+  # related to Shared Services Framework (SSF) required
+  # store Point of Sale (POS) system
   def extract_acronym_defs(self, in_text):
     r = []
+
+    # try first type of search acronym (def)
     match = ACRONYM_REGEX.search(in_text, 0)
     while match != None:
       ac_meaning_str = match.group()
@@ -35,6 +60,32 @@ class Acronym:
       meaning_str = meaning_str[1:-1]                # remove parens
       r.append( (ac.replace(".", ""), meaning_str) )
       match = ACRONYM_REGEX.search(in_text, match.end())
+
+    # try second type def (acronym)
+    acronyms = re.findall(CAPS2p, in_text)
+    word_tokens = re.findall(u"\w+", in_text)
+    #print word_tokens
+
+    # get unique acronyms to reduce computations 
+    uniq_acronyms = list(set(acronyms))
+
+    # for each acronym check if the preceding words spell out the acronym
+    for ac in uniq_acronyms:
+      ac_len = len(ac)
+      if ac_len > AC_MAX_LEN: continue
+
+      for ind in [i for i,x in enumerate(word_tokens) if x == ac]:
+        # check if N-ac_len words match acronym 
+        if ind - ac_len < 0: continue
+	prev_words = word_tokens[ind - ac_len: ind]
+
+	if self.__words_match_acronym__(ac, prev_words):
+	  r.append( (ac, " ".join(prev_words)) ) 
+	else: # try again with one extra word between acronym and defintion  
+	  if ind - ac_len - 1 < 0: continue
+	  prev_words = word_tokens[ind - ac_len - 1: ind - 1 ]
+	  if self.__words_match_acronym__(ac, prev_words):
+	    r.append( (ac, " ".join(prev_words)) ) 
 
     return r
 
@@ -45,7 +96,18 @@ class Acronym:
 
   # see below for pseudo code
   def __scan_docs__(self):
-    pass
+    if not self.corpus:
+      print "you need to set the folder for the corpus"
+      print "this can be set in the object constructor like: o = Acronym('dir')"
+      raise Exception("corpus folder not set")
+
+    files = listdir(self.corpus)
+    for fn in files:
+      fr = codecs.open("%s/%s" % (self.corpus, fn), 'r', 'utf-8')
+      text = fr.read()
+      #print self.extract_acronyms(text)
+      print self.extract_acronym_defs(text)
+      fr.close()
 
   # iterate over the documents in the corpus and calculate the popularity
   # the return value is a float.
@@ -70,6 +132,7 @@ class Acronym:
   # Runs the complete backend processing, creates a serialized dict which can
   # be loaded by the online component.  
   def create_acronym_dict(self):
+    self.__scan_docs__()
     # -pseudo code for __scan_docs__:
     # the following three steps can be done in one pass through the corpus.
     # extract acronyms from every document
@@ -107,13 +170,13 @@ class Acronym:
 
     test_text = "I am listening to RR (Ryan Renolds) and R.R. (Rick Ross)" 
     meaning = m.extract_acronym_defs(test_text)
-    assert meaning == [("RR", "Ryan Renolds"), ("RR", "Rick Ross")], 
-         "failed multiple meaning extraction"
+    assert meaning == [("RR", "Ryan Renolds"), ("RR", "Rick Ross")], "failed multiple meaning extraction"
   
 if __name__ == "__main__":
-  m = Acronym()
+  m = Acronym("docs")
+  m.create_acronym_dict()
 
   print "running tests"
-  m.test_acronym_extraction()
-  m.test_extract_acronym_defs()
+  #m.test_acronym_extraction()
+  #m.test_extract_acronym_defs()
 
