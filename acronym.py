@@ -156,7 +156,25 @@ class Acronym:
 	for item in d[key]:
 	  item["popularity"] = temp_d[item["def"]]/total_occurances
 	  
-  
+ 
+  def __merge_similar__(self, meaning_arr):
+    stop_merge = False
+
+    while not stop_merge:
+      num_items = len(meaning_arr)
+      for i in range(num_items):
+        for j in range(i,num_items):
+          print "comparing ",meaning_arr[i]["def"],meaning_arr[j]["def"]
+          ratio = Levenshtein.ratio(meaning_arr[i]["def"], meaning_arr[j]["def"])
+	  if ratio > 0.90:
+	    no_merge = False
+	    #meaning_arr[i]
+	    meaning_arr.remove(meaning_arr[j])
+
+	  print ratio
+
+    return meaning_arr
+
   # iterate over the dict of acronym dicts and merge meanings that are close.
   # There is nothing returned as you can modify dicts in place in Python.  
   # This uses the Levenshtein edit distance for sting comparision.
@@ -164,7 +182,8 @@ class Acronym:
     for key in in_dict.keys():
       defs = in_dict[key]
       if len(defs) < 2: continue
-      ratio = Levenshtein.ratio('hello world', 'hello')
+
+      in_dict[key] = self.__merge_similar__(defs)
 
     return in_dict
 
@@ -214,7 +233,8 @@ class Acronym:
 
     # de duplicate acronyms (same as above should be able to use results 
     # without going back to documents.)  
-    final_dict = self.deduplicate(prepared_dict)
+    #final_dict = self.deduplicate(prepared_dict)
+    final_dict = prepared_dict
 
     # serialze data dict with acronyms, in JSON so other apps can load it. 
     fw = open("final.json", "w")
