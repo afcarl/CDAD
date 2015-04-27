@@ -11,6 +11,8 @@ ACRONYM_REGEX = re.compile(r'((?:[A-Z]\.){2,}|[A-Z]{2,})\s+\([A-Za-z ]+\)')
 CAPS2p = r'(?:[A-Z]\.){2,}|[A-Z]{2,}'  # regex pattern to find all caps words
                                          # greater than 2 characters in length
 
+COMPARE_MIN = 0.80
+
 AC_MAX_LEN = 5  # heursitc to filter out capatilized words 
 
 class Acronym:
@@ -145,7 +147,6 @@ class Acronym:
 	d[key][0]["popularity"] = 1.0
       else:  # more than one meaning, need to do calculations
 	temp_d = {}
-	print "more than one meaning"
 	total_occurances = 0
 	for item in d[key]:
 	  meaning = item["def"]
@@ -156,26 +157,56 @@ class Acronym:
 	for item in d[key]:
 	  item["popularity"] = temp_d[item["def"]]/total_occurances
 
+  # helper: merges two meanings, sums thier popularities 
   def __merge__(self, in_arr, pair):
     i0,i1 = pair
     print "merging: ",in_arr[i0]," and ",in_arr[i1]
     if in_arr[i0]["popularity"] >=  in_arr[i1]["popularity"]:
+      in_arr[i0]["popularity"] += in_arr[i1]["popularity"]
       del(in_arr[i1])
     else:
+      in_arr[i1]["popularity"] += in_arr[i0]["popularity"]
       del(in_arr[i0])
 
+  def __find_inner_loop__(self, in_arr, outer_index):
 
- 
+    found_pair = False; inner_index = -1
+    for i in range(len(in_arr)): 
+      if i == outer_index: continue
+      print "comparing ",in_arr[outer_index]["def"], in_arr[i]["def"]
+      ratio = Levenshtein.ratio(in_arr[outer_index]["def"], in_arr[i]["def"])
+      print ratio
+      if ratio > COMPARE_MIN:
+        found_pair = True
+	inner_index = i
+	break
+
+    if found_pair: return (outer_index, inner_index)
+    else: return None
+
+  # helper tries to find a pair to merge, if none can be found
+  # it returns None.  Simply iterates over pairs of items, and quits when
+  # a matching pair is found.  
+  def __find_merge_pair__(self, in_arr):
+    if len(in_arr) < 2: return None
+
+    found_pair = False 
+    for i in range(len(in_arr)): 
+      print "outer index: %d " % i
+      pair = self.__find_inner_loop__(in_arr, i)
+      if pair:
+        found_pair = True
+	break
+
+    if found_pair: return pair
+    else: return None
+    
   def __merge_similar__(self, in_arr):
 
-    print "comparing ",in_arr[0]["def"], in_arr[1]["def"]
-    ratio = Levenshtein.ratio(in_arr[0]["def"], in_arr[1]["def"])
-    if ratio > 0.90:
-      #meaning_arr[i]
-      #meaning_arr.remove(meaning_arr[j])
-      print ratio
-      self.__merge__(in_arr, (0,1))  
-	
+    pair = self.__find_merge_pair__(in_arr)
+    while pair:
+      self.__merge__(in_arr, pair)  
+      pair = self.__find_merge_pair__(in_arr)
 
     return in_arr
 
@@ -187,7 +218,7 @@ class Acronym:
       defs = in_dict[key]
       if len(defs) < 2: continue
 
-      in_dict[key] = self.__merge_similar__(defs)
+      self.__merge_similar__(defs)  # pass by ref, will delete in place
 
     return in_dict
 
