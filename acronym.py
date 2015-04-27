@@ -155,25 +155,29 @@ class Acronym:
 	total_occurances = float(total_occurances)
 	for item in d[key]:
 	  item["popularity"] = temp_d[item["def"]]/total_occurances
-	  
+
+  def __merge__(self, in_arr, pair):
+    i0,i1 = pair
+    print "merging: ",in_arr[i0]," and ",in_arr[i1]
+    if in_arr[i0]["popularity"] >=  in_arr[i1]["popularity"]:
+      del(in_arr[i1])
+    else:
+      del(in_arr[i0])
+
+
  
-  def __merge_similar__(self, meaning_arr):
-    stop_merge = False
+  def __merge_similar__(self, in_arr):
 
-    while not stop_merge:
-      num_items = len(meaning_arr)
-      for i in range(num_items):
-        for j in range(i,num_items):
-          print "comparing ",meaning_arr[i]["def"],meaning_arr[j]["def"]
-          ratio = Levenshtein.ratio(meaning_arr[i]["def"], meaning_arr[j]["def"])
-	  if ratio > 0.90:
-	    no_merge = False
-	    #meaning_arr[i]
-	    meaning_arr.remove(meaning_arr[j])
+    print "comparing ",in_arr[0]["def"], in_arr[1]["def"]
+    ratio = Levenshtein.ratio(in_arr[0]["def"], in_arr[1]["def"])
+    if ratio > 0.90:
+      #meaning_arr[i]
+      #meaning_arr.remove(meaning_arr[j])
+      print ratio
+      self.__merge__(in_arr, (0,1))  
+	
 
-	  print ratio
-
-    return meaning_arr
+    return in_arr
 
   # iterate over the dict of acronym dicts and merge meanings that are close.
   # There is nothing returned as you can modify dicts in place in Python.  
@@ -233,8 +237,7 @@ class Acronym:
 
     # de duplicate acronyms (same as above should be able to use results 
     # without going back to documents.)  
-    #final_dict = self.deduplicate(prepared_dict)
-    final_dict = prepared_dict
+    final_dict = self.deduplicate(prepared_dict)
 
     # serialze data dict with acronyms, in JSON so other apps can load it. 
     fw = open("final.json", "w")
