@@ -1,3 +1,4 @@
+#!/usr/bin/env python 
 
 # various acronym processing tools used in offline and online processes
 import codecs
