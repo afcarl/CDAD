@@ -14,7 +14,7 @@ class FolderFillingTest(unittest.TestCase):
     pre_crawl = len(listdir(TEST_FOLDER))
     self.crawler.crawl_search_page("CMS")
     post_crawl = len(listdir(TEST_FOLDER))
-    assertTrue(post_crawl > pre_crawl)
+    self.assertTrue(post_crawl > pre_crawl)
   
 if __name__ == "__main__":
   unittest.main()
