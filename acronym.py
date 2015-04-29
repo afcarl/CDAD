@@ -7,7 +7,7 @@ from os import listdir
 import json
 import Levenshtein
 
-CONTEXT_W = 15  # number of words on both sides of acronym for context
+CONTEXT_W = 2  # number of words on both sides of acronym for context
 ACRONYM_REGEX = re.compile(r'((?:[A-Z]\.){2,}|[A-Z]{2,})\s+\([A-Za-z ]+\)')
 CAPS2p = r'(?:[A-Z]\.){2,}|[A-Z]{2,}'  # regex pattern to find all caps words
                                          # greater than 2 characters in length
@@ -101,11 +101,12 @@ class Acronym:
     word_tokens = re.findall(u"\w+", in_text)
 
     # iterate over every occurance of acronym_str
-    for ind in [i for i,x in enumerate(word_tokens) if x == ac]:
+    for ind in [i for i,x in enumerate(word_tokens) if x == acronym_str]:
       lowerbound = max(0, ind - CONTEXT_W)
       upperbound = min(len(word_tokens) -1, ind + CONTEXT_W + 1)
       for word in word_tokens[lowerbound:upperbound]:
-        ret_set.add(word)
+	if word != acronym_str:
+          ret_set.add(word)
 
     return ret_set
 
@@ -119,11 +120,10 @@ class Acronym:
     r = []; full_text = []
 
     files = listdir(self.corpus)
-    for fn in files:  # TODO Cleanup this into map()
+    for fn in files:  
       fr = codecs.open("%s/%s" % (self.corpus, fn), 'r', 'utf-8')
       text = fr.read()
 
-      # TODO cleanup, may be able to combine these two together
       acs =  self.extract_acronyms(text)
       defs =  self.extract_acronym_defs(text)
       fr.close()
@@ -143,7 +143,6 @@ class Acronym:
   # the return value is a float.
   def calc_acronym_popularity(self, doc_a, d):
     for key in d.keys():
-      print key
       if len(d[key]) == 1: 
 	d[key][0]["popularity"] = 1.0
       else:  # more than one meaning, need to do calculations

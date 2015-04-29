@@ -32,6 +32,30 @@ class OfflineTest(unittest.TestCase):
     meaning = self.ac.extract_acronym_defs(test_text)
     assert meaning == [("RR", "Ryan Renolds"), ("RR", "Rick Ross")], "failed multiple meaning extraction" 
 
+  def test_words_match(self):
+    does_it_match = self.ac.__words_match_acronym__("RN", ["Registered", "Nurse"])
+    self.assertTrue(does_it_match)
+    does_it_match = self.ac.__words_match_acronym__("RN", ["registered", "nurse"])
+    self.assertTrue(does_it_match)
+
+  def test_words_match_extra(self):
+    does_it_match = self.ac.__words_match_acronym__("RN", ["registered", "nurse", "works"])
+    self.assertTrue(does_it_match)
+
+  def test_harvest_context(self):
+    test_text = "I would go see the RR concert, I doubt that anyone has the beard of RR."
+    context = self.ac.harvest_context(test_text, "RR")
+    self.assertEqual(context, set(['concert', 'I', 'of', 'see', 'the', 'beard']))
+
+  def test_num_occurances(self):
+    c = self.ac.__num__occurances__("JJ", ["I love JJ", "he is JJ", "snake"])
+    self.assertEqual(c, 2)
+
+  def test_calc_acronym_popularity(self):
+    d = {"ss":[{"def":""}], "JJ":[{"def":""}]}
+    self.ac.calc_acronym_popularity([], d)
+    self.assertEqual(d["ss"][0]["popularity"], 1.0)
+
 if __name__ == "__main__":
   unittest.main()
 
