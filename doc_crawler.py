@@ -1,4 +1,4 @@
-
+#!/usr/bin/env pytho
 
 # stand alone module for crawling and scraping SimplyHired.com
 # http://www.simplyhired.com/search?q=EMR
