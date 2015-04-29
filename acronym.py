@@ -278,30 +278,6 @@ class Acronym:
 
     json.dumps(prepared_dict)
 
-  def test_acronym_extraction(self):
-
-    test_text = "I am listening to RR (Ryan Renolds)" 
-    acs = m.extract_acronyms(test_text)
-    assert acs == ["RR"], "failed simple extract acronym"
-
-    test_text = "I am listening to R.R. (Rick Ross)"
-    acs = m.extract_acronyms(test_text)
-    assert acs == ["RR"], "failed to extract acronym with periods"
-
-  def test_extract_acronym_defs(self):
-    test_text = "I am listening to R.R. (Rick Ross)"
-    meaning = m.extract_acronym_defs(test_text)
-    assert meaning == [("RR", "Rick Ross")], "failed simple meaning extraction"
-
-    test_text = "I am listening to RR (Ryan Renolds) and R.R. (Rick Ross)" 
-    meaning = m.extract_acronym_defs(test_text)
-    assert meaning == [("RR", "Ryan Renolds"), ("RR", "Rick Ross")], "failed multiple meaning extraction"
-  
 if __name__ == "__main__":
   m = Acronym("docs")
   m.create_acronym_dict()
-
-  print "running tests"
-  #m.test_acronym_extraction()
-  #m.test_extract_acronym_defs()
-
