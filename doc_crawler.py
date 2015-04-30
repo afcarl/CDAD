@@ -1,4 +1,4 @@
-#!/usr/bin/env pytho
+#!/usr/bin/env python
 
 # stand alone module for crawling and scraping SimplyHired.com
 # http://www.simplyhired.com/search?q=EMR
@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 from time import sleep
 from os import listdir
 import codecs 
+import sys
 
 ROOT_URL = "http://www.simplyhired.com/search?q="
 
@@ -79,8 +80,11 @@ class DocCrawler():
 if __name__ == "__main__":
   crawler = DocCrawler("docs")
 
-  #seed_acronyms = ["EMR", "POS", "CMS", "CRM"]
-  crawler.crawl_search_page("CMS")
-  #map(crawler.crawl_search_page, seed_acronyms)
+  if len(sys.argv) < 2:
+    seed_acronyms = ["EMR", "POS", "CMS", "CRM"]
+    map(crawler.crawl_search_page, seed_acronyms)
+  else:
+    # crawls docs containing the string given as an argument
+    crawler.crawl_search_page(sys.argv[1])
 
   print "finished crawling"
