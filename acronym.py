@@ -175,7 +175,6 @@ class Acronym:
       if i == outer_index: continue
       print "comparing ",in_arr[outer_index]["def"], in_arr[i]["def"]
       ratio = Levenshtein.ratio(in_arr[outer_index]["def"], in_arr[i]["def"])
-      print ratio
       if ratio > COMPARE_MIN:
         found_pair = True
 	inner_index = i
@@ -192,7 +191,6 @@ class Acronym:
 
     found_pair = False 
     for i in range(len(in_arr)): 
-      print "outer index: %d " % i
       pair = self.__find_inner_loop__(in_arr, i)
       if pair:
         found_pair = True
